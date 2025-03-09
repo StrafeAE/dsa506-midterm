@@ -26,6 +26,10 @@ with col2:
 with col3:
     st.metric('Enrolled', filtered['Enrolled'].sum())
 
+fig = px.bar(filtered, x=px.Constant('col'), y=['Engineering Enrolled', 'Business Enrolled'])
+fig.update_layout(barmode='group')
+st.plotly_chart(fig)
+
 col_a, col_b = st.columns((2))
 
 with col_a:
