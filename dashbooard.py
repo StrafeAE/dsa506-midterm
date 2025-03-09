@@ -11,7 +11,7 @@ col1, col2 = st.columns((2))
 st.sidebar.header("Choose your filter: ")
 # Create for Year
 year = st.sidebar.multiselect("Pick your Year", df["Year"].unique())
-state = st.sidebar.multiselect("Pick the Term", df2["Term"].unique())
+state = st.sidebar.multiselect("Pick the Term", df["Term"].unique())
 
 '''
 if not region:
