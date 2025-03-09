@@ -20,14 +20,11 @@ if term:
     filtered = df[df['Term'].isin(term)]
 
 with col1:
-    st.subheader('Applications')
-    st.metric(filtered['Applications'].sum())
+    st.metric('Applications', filtered['Applications'].sum())
 with col2:
-    st.subheader('Admitted')
-    st.metric(filtered['Admitted'].sum())
+    st.metric('Admitted', filtered['Admitted'].sum())
 with col3:
-    st.subheader('Enrolled')
-    st.metric(filtered['Enrolled'].sum())
+    st.metric('Enrolled', filtered['Enrolled'].sum())
 
 '''
 category_df = filtered_df.groupby(by = ["Category"], as_index = False)["Sales"].sum()
