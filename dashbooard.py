@@ -3,7 +3,7 @@ import plotly.express as px
 import pandas as pd
 
 
-st.title(" :bar_chart: University Admissions Dashboard")
+st.title("University Admissions Dashboard")
 df = pd.read_csv('university_student_dashboard_data.csv')
 
 col1, col2, col3 = st.columns((3))
@@ -25,6 +25,9 @@ with col2:
     st.metric('Admitted', filtered['Admitted'].sum())
 with col3:
     st.metric('Enrolled', filtered['Enrolled'].sum())
+
+fig = px.line(filtered, x='Year', y='Retention Rate (%)')
+st.plotly_chart(fig, use_container_width=True)
 
 '''
 category_df = filtered_df.groupby(by = ["Category"], as_index = False)["Sales"].sum()
