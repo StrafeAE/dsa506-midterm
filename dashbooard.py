@@ -26,8 +26,8 @@ with col2:
 with col3:
     st.metric('Enrolled', filtered['Enrolled'].sum())
 
-fig = px.line(filtered, x='Year', y='Retention Rate (%)')
-st.plotly_chart(fig, use_container_width=True)
+retention_graph = px.line(df, x='Year', y='Retention Rate (%)', template='seaborn')
+st.plotly_chart(retention_graph, use_container_width=True)
 
 '''
 category_df = filtered_df.groupby(by = ["Category"], as_index = False)["Sales"].sum()
