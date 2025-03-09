@@ -15,9 +15,9 @@ term = st.sidebar.multiselect("Pick the Term", df["Term"].unique())
 
 filtered = df.copy()
 if year:
-    filtered = df[df['Year'].isin(year)]
+    filtered = filtered[filtered['Year'].isin(year)]
 if term:
-    filtered = df[df['Term'].isin(term)]
+    filtered = filtered[filtered['Term'].isin(term)]
 
 with col1:
     st.metric('Applications', filtered['Applications'].sum())
