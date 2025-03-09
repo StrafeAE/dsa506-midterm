@@ -26,9 +26,9 @@ with col2:
 with col3:
     st.metric('Enrolled', filtered['Enrolled'].sum())
 
-fig = px.bar(filtered, x=px.Constant('col'), y=['Engineering Enrolled', 'Business Enrolled'])
-fig.update_layout(barmode='group')
-st.plotly_chart(fig)
+major_breakdown = px.pie(filtered, names=px.Constant('Major'), values=['Engineering Enrolled', 'Business Enrolled', 'Arts Enrolled', 'Science Enrolled'])
+major_breakdown.update_layout(barmode='group')
+st.plotly_chart(major_breakdown)
 
 col_a, col_b = st.columns((2))
 
